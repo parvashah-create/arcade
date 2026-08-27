@@ -1,0 +1,48 @@
+{
+  "name": "arcade",
+  "version": "0.1.0",
+  "description": "Play original monochrome arcade games inspired by early home consoles.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify:metadata": "node scripts/verify-metadata.mjs",
+    "check": "npm run verify:metadata && npm run lint && npm run test && npm run build",
+    "preversion": "npm run check",
+    "version": "node version-bump.mjs && npm run verify:metadata && git add manifest.json versions.json"
+  },
+  "keywords": [
+    "obsidian",
+    "obsidian-plugin",
+    "arcade",
+    "retro-game"
+  ],
+  "author": "parvashah-create",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parvashah-create/arcade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/parvashah-create/arcade/issues"
+  },
+  "homepage": "https://github.com/parvashah-create/arcade#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/node": "^22.15.17",
+    "esbuild": "0.25.5",
+    "eslint": "^9.39.4",
+    "eslint-plugin-obsidianmd": "^0.4.0",
+    "globals": "^17.6.0",
+    "jiti": "^2.6.1",
+    "jsdom": "^29.1.1",
+    "obsidian": "latest",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.59.1",
+    "vitest": "^3.2.4"
+  }
+}
