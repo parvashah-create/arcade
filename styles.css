@@ -62,7 +62,7 @@
 }
 
 .arcade-game-list-item {
-  display: contents;
+  width: 100%;
 }
 
 .arcade-game-button,
@@ -321,7 +321,6 @@
   border: 1px solid var(--arcade-foreground);
   background: var(--arcade-background);
   image-rendering: pixelated;
-  image-rendering: crisp-edges;
 }
 
 .arcade-overlay {
