@@ -101,9 +101,8 @@ function handleSetupKey(
 
   if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
     event.preventDefault();
-    const direction = event.key === 'ArrowDown' ? 1 : -1;
-    const nextIndex = (currentIndex + direction + targets.length) % targets.length;
-    targets[nextIndex]?.element.focus();
+    const nextId = verticalTarget(current.id, event.key === 'ArrowDown');
+    targets.find((target) => target.id === nextId)?.element.focus();
     return;
   }
 
@@ -118,6 +117,10 @@ function handleSetupKey(
     } else if (current.id === 'difficulty') {
       event.preventDefault();
       options.onToggleDifficulty();
+    } else {
+      event.preventDefault();
+      const nextId: SetupFocus = current.id === 'play' ? 'library' : 'play';
+      targets.find((target) => target.id === nextId)?.element.focus();
     }
     return;
   }
@@ -125,6 +128,30 @@ function handleSetupKey(
   if (event.key === 'Enter' && (current.id === 'game' || current.id === 'difficulty')) {
     event.preventDefault();
     options.onPlay();
+  }
+}
+
+function verticalTarget(current: SetupFocus, movingDown: boolean): SetupFocus {
+  if (movingDown) {
+    switch (current) {
+      case 'game':
+        return 'difficulty';
+      case 'difficulty':
+        return 'play';
+      case 'play':
+      case 'library':
+        return 'game';
+    }
+  }
+
+  switch (current) {
+    case 'game':
+      return 'play';
+    case 'difficulty':
+      return 'game';
+    case 'play':
+    case 'library':
+      return 'difficulty';
   }
 }
 

@@ -28,7 +28,7 @@ Canonical references:
 - [x] `npm ci` completes without a vulnerability report.
 - [x] `npm run verify:metadata` passes.
 - [x] `npm run lint` passes.
-- [x] `npm run test` passes with 47 tests in 13 files.
+- [x] `npm run test` passes with 49 tests in 14 files.
 - [x] `npm run build` creates non-empty `main.js`.
 - [x] `styles.css` and `manifest.json` are non-empty release artifacts.
 - [x] The production bundle scan finds no runtime network, Node.js, Electron, eval, or console patterns.

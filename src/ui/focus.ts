@@ -1,6 +1,6 @@
 export function restoreArcadeFocus(container: HTMLElement, fallback?: HTMLElement): void {
   const selected = Array.from(container.querySelectorAll<HTMLElement>('.arcade-selected')).find(
-    (element) => element.closest('.arcade-overlay[hidden]') === null,
+    (element) => element.closest('[hidden]') === null,
   );
   const target = selected ?? fallback;
 
