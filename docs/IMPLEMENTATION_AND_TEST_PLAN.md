@@ -78,7 +78,7 @@ Use these fixed publication values:
   "name": "Arcade",
   "version": "0.1.0",
   "minAppVersion": "1.9.12",
-  "description": "Play original monochrome arcade games inspired by early home consoles.",
+  "description": "Play original games inspired by the Atari 2600 era in a monochrome arcade.",
   "author": "parvashah-create",
   "authorUrl": "https://github.com/parvashah-create",
   "isDesktopOnly": true

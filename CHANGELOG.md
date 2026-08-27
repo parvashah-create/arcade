@@ -6,6 +6,13 @@ The project follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-08-27
+
+### Fixed
+
+- Updated the manifest description to satisfy the Community directory scanner.
+- Replaced partially supported and duplicate CSS declarations flagged by the scanner.
+
 ## [0.1.2] - 2026-08-27
 
 ### Fixed
@@ -34,7 +41,8 @@ The project follows [Semantic Versioning](https://semver.org/).
 - Pop-out-window-aware input, animation scheduling, palette lookup, and resize handling.
 - Automated tests, linting, production builds, and GitHub release artifacts.
 
-[Unreleased]: https://github.com/parvashah-create/arcade/compare/0.1.2...HEAD
+[Unreleased]: https://github.com/parvashah-create/arcade/compare/0.1.3...HEAD
+[0.1.3]: https://github.com/parvashah-create/arcade/compare/0.1.2...0.1.3
 [0.1.2]: https://github.com/parvashah-create/arcade/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/parvashah-create/arcade/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/parvashah-create/arcade/releases/tag/0.1.0
