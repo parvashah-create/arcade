@@ -32,11 +32,12 @@ jobs:
             main.js
             manifest.json
             styles.css
-      - uses: softprops/action-gh-release@v2
-        with:
-          name: Monochrome Arcade ${{ github.ref_name }}
-          generate_release_notes: true
-          files: |
-            main.js
-            manifest.json
-            styles.css
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            main.js manifest.json styles.css \
+            --verify-tag \
+            --title "Monochrome Arcade $GITHUB_REF_NAME" \
+            --generate-notes
