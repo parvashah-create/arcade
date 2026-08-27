@@ -92,6 +92,15 @@ describe('Arcade screens', () => {
     rows[1]?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
     expect(onPlay).toHaveBeenCalledOnce();
 
+    const play = buttonWithText(container, 'PLAY');
+    const library = buttonWithText(container, 'ARCADE LIBRARY');
+    rows[1]?.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown', bubbles: true }));
+    expect(document.activeElement).toBe(play);
+    play.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
+    expect(document.activeElement).toBe(library);
+    library.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowUp', bubbles: true }));
+    expect(document.activeElement).toBe(rows[1]);
+
     const previousButton = requiredElement<HTMLButtonElement>(container, '.arcade-step-button');
     previousButton.click();
     expect(onPreviousGame).toHaveBeenCalledOnce();
@@ -153,6 +162,10 @@ describe('Arcade screens', () => {
     const outsideButton = document.createElement('button');
     document.body.append(outsideButton);
     outsideButton.focus();
+    gameScreen.setPaused(true, false);
+    expect(overlay.dataset.mode).toBe('paused');
+    expect(overlay.dataset.interactive).toBe('false');
+    expect(document.activeElement).toBe(outsideButton);
     restoreArcadeFocus(container, canvas);
     expect(document.activeElement).toBe(canvas);
 

@@ -54,7 +54,7 @@ Open Arcade from the gamepad ribbon icon or the command palette.
 | Screen | Controls |
 | --- | --- |
 | Library | `Up` / `Down` selects a game; `Enter` opens setup. |
-| Setup | `Up` / `Down` selects a row; `Left` / `Right` changes it; `Enter` plays; `Escape` returns to the library. |
+| Setup | `Up` / `Down` moves between rows; `Left` / `Right` changes a value or switches between side-by-side actions; `Enter` confirms; `Escape` returns to the library. |
 | Invaders | `Left` / `Right` or `A` / `D` moves; `Space` fires. |
 | Pause menu | `P` or `Escape` pauses; arrow keys select an action; `Enter` confirms. |
 

@@ -151,7 +151,7 @@ export class ArcadeView extends ItemView {
         void this.plugin.updateArcadeData((current) => ({ ...current, muted }));
       },
       onSnapshot: (snapshot) => gameScreen.update(snapshot),
-      onPauseChange: (paused) => gameScreen.setPaused(paused),
+      onPauseChange: (paused, focusMenu) => gameScreen.setPaused(paused, focusMenu),
       onGameOver: (snapshot) => {
         gameScreen.showGameOver();
         if (snapshot.score > this.plugin.getArcadeData().highScores.invaders) {

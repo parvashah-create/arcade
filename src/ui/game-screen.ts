@@ -12,7 +12,7 @@ export interface GameScreenHandlers {
 export interface GameScreen {
   canvas: HTMLCanvasElement;
   update(snapshot: Readonly<InvadersSnapshot>): void;
-  setPaused(paused: boolean): void;
+  setPaused(paused: boolean, focusMenu?: boolean): void;
   setMuted(muted: boolean): void;
   showGameOver(): void;
 }
@@ -58,6 +58,12 @@ export function renderGameScreen(container: HTMLElement, handlers: GameScreenHan
   overlayMenu.append(...menuButtons);
   overlay.append(overlayText, overlayMenu);
   overlay.addEventListener('keydown', (event) => handleOverlayKey(event, menuButtons, handlers));
+  overlay.addEventListener('pointerdown', (event) => {
+    if (overlayMode === 'paused' && overlay.dataset.interactive === 'false') {
+      event.preventDefault();
+      canvas.focus();
+    }
+  });
   frame.append(overlay);
 
   const hints = createGameHints();
@@ -69,11 +75,12 @@ export function renderGameScreen(container: HTMLElement, handlers: GameScreenHan
 
   let overlayMode: OverlayMode = 'hidden';
 
-  const setOverlay = (mode: OverlayMode): void => {
+  const setOverlay = (mode: OverlayMode, focusMenu = true): void => {
     overlayMode = mode;
     overlay.dataset.mode = mode;
+    overlay.dataset.interactive = String(mode !== 'paused' || focusMenu);
     overlay.hidden = mode === 'hidden';
-    overlayMenu.hidden = mode === 'hidden' || mode === 'hit';
+    overlayMenu.hidden = mode === 'hidden' || mode === 'hit' || (mode === 'paused' && !focusMenu);
     resume.hidden = mode !== 'paused';
     restart.hidden = mode === 'hit' || mode === 'hidden';
     sound.hidden = mode !== 'paused';
@@ -88,8 +95,10 @@ export function renderGameScreen(container: HTMLElement, handlers: GameScreenHan
         overlayText.textContent = 'HIT';
         break;
       case 'paused':
-        overlayText.textContent = 'PAUSED';
-        resume.focus();
+        overlayText.textContent = focusMenu ? 'PAUSED' : 'PAUSED · CLICK GAME TO RESUME';
+        if (focusMenu) {
+          resume.focus();
+        }
         break;
       case 'game-over':
         overlayText.textContent = 'Game over';
@@ -108,11 +117,11 @@ export function renderGameScreen(container: HTMLElement, handlers: GameScreenHan
         setOverlay('hidden');
       }
     },
-    setPaused(paused) {
+    setPaused(paused, focusMenu = true) {
       if (overlayMode === 'game-over') {
         return;
       }
-      setOverlay(paused ? 'paused' : 'hidden');
+      setOverlay(paused ? 'paused' : 'hidden', focusMenu);
     },
     setMuted(nextMuted) {
       sound.textContent = nextMuted ? 'SOUND OFF' : 'SOUND ON';

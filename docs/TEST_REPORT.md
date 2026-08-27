@@ -9,12 +9,12 @@ Sandbox vault: dedicated local development vault
 ## Automated checks
 
 - `npm run lint`: pass
-- `npm run test`: pass — 47 tests in 13 files
+- `npm run test`: pass — 49 tests in 14 files
 - `npm run build`: pass
 - `npm run verify:metadata`: pass
 - `git diff --check`: pass
 
-The automated suite covers persisted-data repair, controller state transitions, deterministic randomness, rectangle and swept collisions, 60 Hz timing, sound-event mapping, all sixteen game-mode flags, formation movement, shield erosion, game initialization, player firing, scoring, invisible-mode visibility, score formatting, cannon symmetry, library selection, view-focus restoration, setup explanations and controls, pause-menu sound and navigation, pointer actions, broad tooltip-label regression, and publication-metadata consistency.
+The automated suite covers persisted-data repair, controller state transitions, deterministic randomness, rectangle and swept collisions, 60 Hz timing, sound-event mapping, all sixteen game-mode flags, formation movement, shield erosion, game initialization, player firing, scoring, invisible-mode visibility, score formatting, cannon symmetry, browser arrow-key normalization, library selection, view-focus restoration, spatial setup navigation, passive pause focus ownership, pause-menu sound and navigation, pointer actions, broad tooltip-label regression, and publication-metadata consistency.
 
 ## Sandbox installation
 
@@ -39,6 +39,8 @@ These require observing the desktop app and must be completed in the sandbox vau
 - [ ] Verify responsive rendering in a narrow pane and a wide pane.
 - [ ] Verify high score, mode, difficulty, and mute choice persist after plugin reload.
 - [ ] Verify game motion and sound stop on pause, tab hide, view close, and plugin disable.
+- [ ] In split view, verify clicking a note pauses the game and returns arrow-key scrolling to the note.
+- [ ] Verify clicking the paused game restores game controls without moving focus away from another pane first.
 - [ ] Inspect Obsidian developer tools after lifecycle testing for console errors.
 
 ## Ongoing fidelity work
@@ -56,9 +58,6 @@ The current constants make the full gameplay loop functional. Future releases ca
 ## Release blockers
 
 - Complete and record the remaining manual sandbox verification above, especially a clean-vault install from release artifacts.
-- Commit and push the complete source tree to the default branch.
-- Change the GitHub repository visibility from private to public before submission.
-- Publish the public GitHub release tagged exactly `0.1.0`.
 - Sign in, connect the repository owner's GitHub account, accept the developer policies, and submit through the Obsidian Community directory.
 
 ## Publication metadata completed

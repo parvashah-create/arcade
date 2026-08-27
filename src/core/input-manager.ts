@@ -1,5 +1,6 @@
 import { Component } from 'obsidian';
 import type { InputSnapshot } from './game';
+import { toGameKey } from './input-key';
 
 export interface InputManagerCallbacks {
   onPauseToggle(): void;
@@ -60,34 +61,33 @@ export class InputManager extends Component {
   }
 
   private handleKeyDown(event: KeyboardEvent): void {
-    if (!this.enabled || event.isComposing || hasCommandModifier(event) || !isGameKey(event.key)) {
+    const key = toGameKey(event.key);
+    if (!this.enabled || event.isComposing || hasCommandModifier(event) || key === null) {
       return;
     }
 
     event.preventDefault();
     this.callbacks.onUserGesture();
 
-    switch (event.key.toLowerCase()) {
-      case 'arrowleft':
-      case 'a':
+    switch (key) {
+      case 'left':
         this.leftHeld = true;
         return;
-      case 'arrowright':
-      case 'd':
+      case 'right':
         this.rightHeld = true;
         return;
-      case ' ':
+      case 'fire':
         if (!event.repeat) {
           this.firePressed = true;
         }
         return;
-      case 'p':
+      case 'pause':
         if (!event.repeat) {
           this.pausePressed = true;
           this.callbacks.onPauseToggle();
         }
         return;
-      case 'escape':
+      case 'menu':
         if (!event.repeat) {
           this.backPressed = true;
           this.callbacks.onMenuToggle();
@@ -96,26 +96,26 @@ export class InputManager extends Component {
   }
 
   private handleKeyUp(event: KeyboardEvent): void {
-    if (!this.enabled || !isGameKey(event.key)) {
+    const key = toGameKey(event.key);
+    if (!this.enabled || key === null) {
       return;
     }
 
-    switch (event.key.toLowerCase()) {
-      case 'arrowleft':
-      case 'a':
+    switch (key) {
+      case 'left':
         this.leftHeld = false;
         return;
-      case 'arrowright':
-      case 'd':
+      case 'right':
         this.rightHeld = false;
+        return;
+      case 'fire':
+      case 'pause':
+      case 'menu':
+        return;
     }
   }
 }
 
 function hasCommandModifier(event: KeyboardEvent): boolean {
   return event.altKey || event.ctrlKey || event.metaKey;
-}
-
-function isGameKey(key: string): boolean {
-  return ['arrowleft', 'arrowright', 'a', 'A', 'd', 'D', ' ', 'p', 'P', 'escape', 'Escape'].includes(key);
 }

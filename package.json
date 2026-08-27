@@ -1,6 +1,6 @@
 {
   "name": "arcade",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Play original games inspired by the Atari 2600 era in a monochrome arcade built for Obsidian.",
   "main": "main.js",
   "type": "module",

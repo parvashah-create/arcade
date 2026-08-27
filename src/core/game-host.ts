@@ -5,7 +5,7 @@ import { browserScheduler, GameLoop } from './game-loop';
 import { InputManager } from './input-manager';
 import { readPalette } from './palette';
 
-export type PauseReason = 'user' | 'hidden-view' | 'window-blur';
+export type PauseReason = 'user' | 'hidden-view' | 'window-blur' | 'focus-loss';
 
 type WindowWithResizeObserver = Window & { readonly ResizeObserver: typeof ResizeObserver };
 
@@ -21,7 +21,7 @@ export interface GameHostOptions<TSnapshot> {
   muted: boolean;
   onMutedChange(muted: boolean): void;
   onSnapshot(snapshot: Readonly<TSnapshot>): void;
-  onPauseChange(paused: boolean): void;
+  onPauseChange(paused: boolean, focusMenu: boolean): void;
   onGameOver(snapshot: Readonly<TSnapshot>): void;
 }
 
@@ -49,6 +49,7 @@ export class GameHost<TSnapshot> extends Component {
 
   public onload(): void {
     const ownerWindow = this.options.canvas.win as WindowWithResizeObserver;
+    const interactionRoot = this.options.canvas.closest<HTMLElement>('.arcade-game-screen') ?? this.options.canvas;
     this.options.canvas.width = 160;
     this.options.canvas.height = 192;
     this.context.imageSmoothingEnabled = false;
@@ -71,6 +72,17 @@ export class GameHost<TSnapshot> extends Component {
     this.registerDomEvent(ownerWindow, 'focus', () => {
       if (this.active) {
         this.setPauseReason('window-blur', false);
+      }
+    });
+    this.registerDomEvent(interactionRoot, 'focusin', () => {
+      if (this.active) {
+        this.setPauseReason('focus-loss', false);
+      }
+    });
+    this.registerDomEvent(interactionRoot, 'focusout', (event) => {
+      const nextTarget = event.relatedTarget;
+      if (nextTarget === null || !('nodeType' in nextTarget) || !interactionRoot.contains(nextTarget as Node)) {
+        this.setPauseReason('focus-loss', true);
       }
     });
 
@@ -129,7 +141,7 @@ export class GameHost<TSnapshot> extends Component {
       }
     }
 
-    this.options.onPauseChange(this.isPaused());
+    this.options.onPauseChange(this.isPaused(), this.active && this.pauseReasons.has('user'));
     this.syncLoop();
   }
 
