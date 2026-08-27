@@ -59,7 +59,7 @@ Its mechanical fidelity target is the 1980 Atari 2600 version of Space Invaders.
 Arcade opens from either:
 
 - A gamepad-style icon in Obsidian's left ribbon.
-- The command palette command `Monochrome Arcade: Open arcade`.
+- The command palette command `Arcade: Open game library`.
 
 The command should have a suggested hotkey of `Cmd/Ctrl + Shift + A`. Obsidian owns final hotkey assignment so users can resolve conflicts with their existing commands.
 

@@ -1,15 +1,23 @@
-# Monochrome Arcade
+# Arcade
 
-Play original monochrome arcade games inside Obsidian.
+Bring the feeling of Atari 2600-era gaming into Obsidian.
 
-Monochrome Arcade adds a keyboard-first game library that follows your Obsidian theme instead of looking like a separate app. The first release includes **Invaders**, an original fixed-screen shooter shaped by the constraints, rhythm, and variation-heavy design of early home consoles.
+Arcade is a small love letter to the Atari 2600 era: immediate controls, tiny expressive sprites, simple sounds, surprising difficulty, and game variations that make a few mechanics feel endlessly replayable. It lives inside an Obsidian-native, keyboard-first library that follows your active theme instead of looking like a separate app.
 
-Why does this exist? I was bored. I also wanted to learn how old games created memorable systems with tiny sprites, simple sounds, and very little hardware.
+The first release includes **Invaders**, an original fixed-screen shooter inspired by the rhythm and variation-driven design of early home-console games.
+
+Why does this exist? I was bored. Then I became fascinated by how much personality old games created with almost no hardware, and I wanted to learn by building that feeling myself.
+
+## The inspiration
+
+Atari 2600 games had to do a lot with very little. Their limitations shaped the experience: bold silhouettes, readable motion, short feedback loops, physical-feeling controls, and rule variations instead of endless content. Arcade studies those ideas and reimagines them for Obsidian rather than emulating a console or loading original games.
+
+If you remember that era, this should feel familiar. If you do not, this is an invitation to discover why those games were so memorable.
 
 ## Features
 
 - A monochrome interface derived from the active Obsidian theme.
-- A gamepad ribbon action and the **Monochrome Arcade: Open arcade** command.
+- A gamepad ribbon action and the **Arcade: Open game library** command.
 - Sixteen one-player Invaders variations.
 - Two clearly explained difficulty settings.
 - Keyboard-first library, setup, gameplay, and pause menus.
@@ -26,10 +34,10 @@ Why does this exist? I was bored. I also wanted to learn how old games created m
 
 ### Community Plugins
 
-After Monochrome Arcade is accepted into the Obsidian Community directory:
+After Arcade is accepted into the Obsidian Community directory:
 
 1. Open **Settings → Community plugins**.
-2. Select **Browse** and search for **Monochrome Arcade**.
+2. Select **Browse** and search for **Arcade**.
 3. Select **Install**, then **Enable**.
 
 ### Manual installation
@@ -37,11 +45,11 @@ After Monochrome Arcade is accepted into the Obsidian Community directory:
 1. Download `main.js`, `manifest.json`, and `styles.css` from the latest GitHub release.
 2. Create `<vault>/.obsidian/plugins/arcade/`.
 3. Place all three files directly inside that folder.
-4. Reload Obsidian and enable **Monochrome Arcade** under **Settings → Community plugins**.
+4. Reload Obsidian and enable **Arcade** under **Settings → Community plugins**.
 
 ## How to play
 
-Open Monochrome Arcade from the gamepad ribbon icon or the command palette.
+Open Arcade from the gamepad ribbon icon or the command palette.
 
 | Screen | Controls |
 | --- | --- |
@@ -50,7 +58,7 @@ Open Monochrome Arcade from the gamepad ribbon icon or the command palette.
 | Invaders | `Left` / `Right` or `A` / `D` moves; `Space` fires. |
 | Pause menu | `P` or `Escape` pauses; arrow keys select an action; `Enter` confirms. |
 
-For quick access, assign your preferred shortcut to **Monochrome Arcade: Open arcade** under **Settings → Hotkeys**. Monochrome Arcade intentionally does not claim a default shortcut, which avoids conflicts with existing user hotkeys.
+For quick access, assign your preferred shortcut to **Arcade: Open game library** under **Settings → Hotkeys**. Arcade intentionally does not claim a default shortcut, which avoids conflicts with existing user hotkeys.
 
 ### Difficulty
 
@@ -72,20 +80,20 @@ Game `01` is the basic mode. Game `16` enables all four modifiers. Multiplayer v
 
 ## Privacy and permissions
 
-Monochrome Arcade stores only these values in Obsidian's plugin data:
+Arcade stores only these values in Obsidian's plugin data:
 
 - Selected game variation.
 - Selected difficulty.
 - Sound preference.
 - Local Invaders high score.
 
-Monochrome Arcade does not read or modify notes, access files outside the vault, connect to remote services, collect analytics, display ads, or update itself. Disabling or closing the plugin stops its input, animation loop, and audio.
+Arcade does not read or modify notes, access files outside the vault, connect to remote services, collect analytics, display ads, or update itself. Disabling or closing the plugin stops its input, animation loop, and audio.
 
-## Originality and trademarks
+## Inspiration and originality
 
-Monochrome Arcade is an independent community project. It is not affiliated with or endorsed by Obsidian, Atari, Taito, or any game publisher.
+Arcade is an independent community project inspired by Atari 2600-era game design. It is not affiliated with or endorsed by Obsidian, Atari, Taito, or any game publisher.
 
-All gameplay code, interface code, sprites, and synthesized sounds in this repository were created for Monochrome Arcade. The plugin includes no commercial ROMs, copied source code, copied artwork, copied audio, or original game binaries. Historical product names in development documents identify mechanical research references only; all third-party names and trademarks belong to their respective owners.
+All gameplay code, interface code, sprites, and synthesized sounds in this repository were created for Arcade. The plugin includes no commercial ROMs, copied source code, copied artwork, copied audio, or original game binaries. Historical product names identify design influences and mechanical research references; all third-party names and trademarks belong to their respective owners.
 
 ## Development
 
@@ -109,7 +117,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development expectations and [docs/RE
 ## Support
 
 - Report reproducible bugs through [GitHub Issues](https://github.com/parvashah-create/arcade/issues).
-- Include your Obsidian version, operating system, Monochrome Arcade version, and reproduction steps.
+- Include your Obsidian version, operating system, Arcade version, and reproduction steps.
 - Review [CHANGELOG.md](CHANGELOG.md) before reporting an issue fixed in a newer release.
 - Report security-sensitive problems privately as described in [SECURITY.md](SECURITY.md).
 
@@ -123,4 +131,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development expectations and [docs/RE
 
 ## License
 
-Monochrome Arcade is available under the [MIT License](LICENSE).
+Arcade is available under the [MIT License](LICENSE).

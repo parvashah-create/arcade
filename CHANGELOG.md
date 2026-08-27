@@ -1,16 +1,23 @@
 # Changelog
 
-All notable changes to Monochrome Arcade are documented in this file.
+All notable changes to Arcade are documented in this file.
 
 The project follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-08-27
+
+### Changed
+
+- Renamed the public plugin from Monochrome Arcade to Arcade.
+- Expanded the README to celebrate the project's Atari 2600-era design inspiration.
+
 ## [0.1.0] - 2026-08-27
 
 ### Added
 
-- Monochrome Arcade library integrated with the active Obsidian theme.
+- Arcade library integrated with the active Obsidian theme.
 - Original Invaders game with sixteen one-player variations and two difficulty settings.
 - Keyboard navigation for the library, setup screen, gameplay, and pause menu.
 - Generated sound effects, persistent sound preference, and local high-score storage.
@@ -18,5 +25,6 @@ The project follows [Semantic Versioning](https://semver.org/).
 - Pop-out-window-aware input, animation scheduling, palette lookup, and resize handling.
 - Automated tests, linting, production builds, and GitHub release artifacts.
 
-[Unreleased]: https://github.com/parvashah-create/arcade/compare/0.1.0...HEAD
+[Unreleased]: https://github.com/parvashah-create/arcade/compare/0.1.1...HEAD
+[0.1.1]: https://github.com/parvashah-create/arcade/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/parvashah-create/arcade/releases/tag/0.1.0
