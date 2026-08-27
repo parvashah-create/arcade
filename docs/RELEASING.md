@@ -1,6 +1,6 @@
-# Releasing Monochrome Arcade
+# Releasing Arcade
 
-Monochrome Arcade follows [Semantic Versioning](https://semver.org/) and the current [Obsidian plugin submission process](https://docs.obsidian.md/plugins/releasing/submit-plugin).
+Arcade follows [Semantic Versioning](https://semver.org/) and the current [Obsidian plugin submission process](https://docs.obsidian.md/plugins/releasing/submit-plugin).
 
 Obsidian expects the GitHub release tag to exactly match `manifest.json` using the format `x.y.z` without a `v` prefix. Each release must attach `main.js`, `manifest.json`, and `styles.css`.
 
@@ -52,7 +52,7 @@ The tag triggers the release workflow. Never prefix the tag with `v`, edit a pub
 
 ## Compatibility versions
 
-`versions.json` maps each Monochrome Arcade version to its minimum supported Obsidian version. If a future release requires a newer Obsidian API, update `minAppVersion` in `manifest.json` before running `npm version`.
+`versions.json` maps each Arcade version to its minimum supported Obsidian version. If a future release requires a newer Obsidian API, update `minAppVersion` in `manifest.json` before running `npm version`.
 
 ## Release checklist
 

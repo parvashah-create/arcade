@@ -39,5 +39,5 @@ jobs:
           gh release create "$GITHUB_REF_NAME" \
             main.js manifest.json styles.css \
             --verify-tag \
-            --title "Monochrome Arcade $GITHUB_REF_NAME" \
+            --title "Arcade $GITHUB_REF_NAME" \
             --generate-notes

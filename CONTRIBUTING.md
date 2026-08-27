@@ -1,6 +1,6 @@
-# Contributing to Monochrome Arcade
+# Contributing to Arcade
 
-Thanks for helping improve Monochrome Arcade.
+Thanks for helping improve Arcade.
 
 ## Before you start
 
@@ -17,7 +17,7 @@ npm ci
 npm run dev
 ```
 
-Link the repository into a test vault at `.obsidian/plugins/arcade`, enable Monochrome Arcade, and use a hot-reload helper if desired.
+Link the repository into a test vault at `.obsidian/plugins/arcade`, enable Arcade, and use a hot-reload helper if desired.
 
 ## Verification
 

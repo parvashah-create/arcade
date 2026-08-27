@@ -9,11 +9,11 @@ export default class ArcadePlugin extends Plugin {
   public async onload(): Promise<void> {
     this.data = parseArcadeData(await this.loadData());
     this.registerView(ARCADE_VIEW_TYPE, (leaf) => new ArcadeView(leaf, this));
-    const ribbonIcon = this.addRibbonIcon('gamepad-2', 'Open arcade', () => void this.activateView());
+    const ribbonIcon = this.addRibbonIcon('gamepad-2', 'Open game library', () => void this.activateView());
     ribbonIcon.addClass('arcade-ribbon-icon');
     this.addCommand({
       id: 'open',
-      name: 'Open arcade',
+      name: 'Open game library',
       icon: 'gamepad-2',
       callback: () => void this.activateView(),
     });

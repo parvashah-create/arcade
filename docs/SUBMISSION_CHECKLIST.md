@@ -1,6 +1,6 @@
 # Community Plugin Submission Checklist
 
-This checklist tracks Monochrome Arcade's initial submission to the official Obsidian Community directory.
+This checklist tracks Arcade's initial submission to the official Obsidian Community directory.
 
 Canonical references:
 
@@ -16,12 +16,12 @@ Canonical references:
 - [x] Root `manifest.json` contains a unique lowercase ID, exact semantic version, tested minimum app version, short description, author, and desktop compatibility.
 - [x] Root `versions.json` maps `0.1.0` to the tested Obsidian baseline.
 - [x] Plugin description is under 250 characters, starts with an action, ends with a period, and uses no emoji.
-- [x] No donation field is present because Monochrome Arcade does not solicit funding.
+- [x] No donation field is present because Arcade does not solicit funding.
 - [x] Runtime code contains no telemetry, ads, remote requests, dynamic updates, Node.js imports, or Electron imports.
 - [x] No ROM, copied commercial asset, recorded commercial audio, or game binary is included.
 - [x] Originality, non-affiliation, privacy, and stored-data behavior are disclosed.
 - [x] Public support, security reporting, contribution, changelog, and release documents exist.
-- [x] The `arcade` ID and `Monochrome Arcade` name were absent from the official registry on 2026-08-27.
+- [x] The `arcade` ID and `Arcade` name were absent from the official registry on 2026-08-27.
 
 ## Verification
 

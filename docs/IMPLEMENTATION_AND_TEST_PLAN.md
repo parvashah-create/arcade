@@ -75,7 +75,7 @@ Use these fixed publication values:
 ```json
 {
   "id": "arcade",
-  "name": "Monochrome Arcade",
+  "name": "Arcade",
   "version": "0.1.0",
   "minAppVersion": "1.9.12",
   "description": "Play original monochrome arcade games inspired by early home consoles.",
@@ -89,7 +89,7 @@ Use these fixed publication values:
 
 ### Suggested hotkey
 
-Register `Monochrome Arcade: Open arcade` without a default hotkey to comply with current community-plugin guidance. Recommend `Mod+Shift+A` in the README and let users assign it in Obsidian's Hotkeys settings.
+Register `Arcade: Open game library` without a default hotkey to comply with current community-plugin guidance. Recommend `Mod+Shift+A` in the README and let users assign it in Obsidian's Hotkeys settings.
 
 ### Logical display
 
@@ -514,8 +514,8 @@ Tasks:
 - [ ] Return `gamepad-2` from `getIcon()` and use the same icon for the ribbon.
 - [ ] Set `navigation = false` because the view is a fixed application surface.
 - [ ] Register the view in `main.ts`.
-- [ ] Add ribbon tooltip `Open arcade`.
-- [ ] Add command ID `open` and name `Open arcade` without a default hotkey.
+- [ ] Add ribbon tooltip `Open game library`.
+- [ ] Add command ID `open` and name `Open game library` without a default hotkey.
 - [ ] Implement one shared `activateView()` method used by ribbon and command.
 - [ ] In `activateView()`, reveal an existing leaf of `ARCADE_VIEW_TYPE`; otherwise use `workspace.getLeaf('tab')`, set its view state, and reveal it.
 - [ ] Do not read `leaf.view` until after `await workspace.revealLeaf(leaf)`.
