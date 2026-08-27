@@ -38,14 +38,14 @@ Canonical references:
 
 ## GitHub release
 
-- [ ] Commit the complete source tree to `main`.
-- [ ] Make `https://github.com/parvashah-create/arcade` public.
-- [ ] Push `main` and confirm the **Verify plugin** workflow passes.
-- [ ] Confirm GitHub Actions may write release contents and attestations.
-- [ ] Create annotated tag `0.1.0`; do not use `v0.1.0`.
-- [ ] Confirm the release workflow publishes release `0.1.0`.
-- [ ] Confirm the release contains `main.js`, `manifest.json`, and `styles.css` as individual attachments.
-- [ ] Confirm the build provenance attestation appears for all three assets.
+- [x] Commit the complete source tree to `main`.
+- [x] Make `https://github.com/parvashah-create/arcade` public.
+- [x] Push `main` and confirm the **Verify plugin** workflow passes.
+- [x] Confirm GitHub Actions may write release contents and attestations.
+- [x] Create annotated tag `0.1.0`; do not use `v0.1.0`.
+- [x] Confirm the release workflow publishes release `0.1.0`.
+- [x] Confirm the release contains `main.js`, `manifest.json`, and `styles.css` as individual attachments.
+- [x] Confirm the build provenance attestation appears for all three assets.
 - [ ] Download the attachments and complete the clean-vault test.
 
 ## Community directory
