@@ -4,6 +4,8 @@ Bring the feeling of Atari 2600-era gaming into Obsidian.
 
 Arcade is a small love letter to the Atari 2600 era: immediate controls, tiny expressive sprites, simple sounds, surprising difficulty, and game variations that make a few mechanics feel endlessly replayable. It lives inside an Obsidian-native, keyboard-first library that follows your active theme instead of looking like a separate app.
 
+![Invaders gameplay running inside an Arcade tab](images/invaders-gameplay.png)
+
 The first release includes **Invaders**, an original fixed-screen shooter inspired by the rhythm and variation-driven design of early home-console games.
 
 Why does this exist? I was bored. Then I became fascinated by how much personality old games created with almost no hardware, and I wanted to learn by building that feeling myself.
@@ -13,6 +15,12 @@ Why does this exist? I was bored. Then I became fascinated by how much personali
 Atari 2600 games had to do a lot with very little. Their limitations shaped the experience: bold silhouettes, readable motion, short feedback loops, physical-feeling controls, and rule variations instead of endless content. Arcade studies those ideas and reimagines them for Obsidian rather than emulating a console or loading original games.
 
 If you remember that era, this should feel familiar. If you do not, this is an invitation to discover why those games were so memorable.
+
+## See it in action
+
+| Arcade library | Invaders setup |
+| --- | --- |
+| ![The Arcade game library integrated into the workspace](images/arcade-library.png) | ![Invaders game variation and difficulty setup](images/invaders-setup.png) |
 
 ## Features
 
